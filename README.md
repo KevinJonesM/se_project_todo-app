@@ -1,17 +1,42 @@
-# Simple Todo App
+# **Simple Todo App**
 
-Give a brief description of the project here. Feel free to give it a different name.
+## 📝 **Description**
 
-## Functionality
+The **Simple Todo App** is a user-friendly application designed to help users manage their daily tasks. It allows users to:
+- 🟢 **Add tasks**
+- 🟢 **Edit tasks**
+- 🟢 **Mark tasks as completed or uncompleted**
+- 🟢 **Delete tasks effortlessly**
+This application is built with modern web development practices, focusing on usability, modularity, and responsiveness.
 
-Give a more detailed explanation of the project and its functionality.
+## ⚙️ **Functionality**
 
-## Technology
+### Core Features:
+- 🔹 **Add new tasks:** Users can open a modal form to add tasks with a name and an optional due date.
+- 🔹 **Toggle completion status:** Each task has a checkbox to mark it as completed or not.
+- 🔹 **Delete tasks:** Tasks can be easily removed when no longer needed.
+- 🔹 **Responsive design:** Works seamlessly on desktop and mobile.
+- 🔹 **Keyboard & click support:**
+  - Press `Esc` to close the modal.
+  - Click outside the modal to close it.
+- 🔹 **Unique IDs for tasks:** Uses the `uuid` library to ensure every task has a unique identifier.
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+## 💻 **Technology Stack**
+- **HTML5**: Provides the structure for the application.
+- **CSS3 (BEM methodology)**: Ensures modular and reusable styles.
+- **JavaScript (ES6)**: Adds dynamic functionality and modularity.
+- **UUID**: Generates unique IDs for every task.
+- **GitHub Pages**: Hosts the project for deployment.
+- **Prettier**: Keeps the code clean and consistent.
 
-## Deployment
+### Features Implemented with OOP:
+- **Todo Class**:
+  - Manages individual tasks.
+  - Handles rendering, events, and DOM interactions.
+- **FormValidator Class**:
+  - Validates form inputs dynamically.
+  - Resets the form and disables the submit button after a successful submission.
 
-This project is deployed on GitHub Pages:
-
-- ADD LINK HERE
+## 🚀 **Deployment**
+The project is live and hosted on GitHub Pages:
+🔗 **[Simple Todo App](https://github.com/KevinJonesM/se_project_todo-app.git)**
