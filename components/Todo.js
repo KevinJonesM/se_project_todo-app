@@ -1,3 +1,4 @@
+// components/Todo.js
 export class Todo {
     constructor(data, selector) {
       this._data = data;
