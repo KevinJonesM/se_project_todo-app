@@ -50,10 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return todo.getView();
   };
 
-  initialTodos.forEach((item) => {
+  const renderTodo = (item) => {
     const todo = generateTodo(item);
     todosList.append(todo);
-  });
+  };
+
+  initialTodos.forEach(renderTodo);
 
   addTodoForm.addEventListener("submit", (evt) => {
     evt.preventDefault();
@@ -64,8 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
     date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
 
     const newTodo = { id: uuidv4(), name, date, completed: false };
-    const todoElement = generateTodo(newTodo);
-    todosList.append(todoElement);
+
+    renderTodo(newTodo);
 
     closeModal(addTodoPopup);
     formValidator.resetValidation();
