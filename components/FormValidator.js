@@ -30,7 +30,7 @@ export class FormValidator {
 
   _toggleButtonState() {
       const isFormValid = this._inputList.every(
-          inputElement => inputElement.validity.valid
+          inputElement => inputElement.validity.valid && inputElement.value.trim() !== ""
       );
 
       if (isFormValid) {
@@ -49,6 +49,7 @@ export class FormValidator {
               this._toggleButtonState();
           });
       });
+      this._toggleButtonState();
   }
 
   _checkInputValidity(inputElement) {
