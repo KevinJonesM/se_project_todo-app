@@ -9,6 +9,8 @@ The **Simple Todo App** is a user-friendly application designed to help users ma
 - 🟢 **Delete tasks effortlessly**
 This application is built with modern web development practices, focusing on usability, modularity, and responsiveness.
 
+---
+
 ## ⚙️ **Functionality**
 
 ### Core Features:
@@ -21,22 +23,39 @@ This application is built with modern web development practices, focusing on usa
   - Click outside the modal to close it.
 - 🔹 **Unique IDs for tasks:** Uses the `uuid` library to ensure every task has a unique identifier.
 
-## 💻 **Technology Stack**
-- **HTML5**: Provides the structure for the application.
-- **CSS3 (BEM methodology)**: Ensures modular and reusable styles.
-- **JavaScript (ES6)**: Adds dynamic functionality and modularity.
-- **UUID**: Generates unique IDs for every task.
-- **GitHub Pages**: Hosts the project for deployment.
-- **Prettier**: Keeps the code clean and consistent.
+---
 
-### Features Implemented with OOP:
-- **Todo Class**:
-  - Manages individual tasks.
-  - Handles rendering, events, and DOM interactions.
-- **FormValidator Class**:
-  - Validates form inputs dynamically.
-  - Resets the form and disables the submit button after a successful submission.
+## ⚙️ **Technology Stack**  
+
+| Technology | Purpose |
+|------------|---------|
+| **HTML5** | Provides the app's structure. |
+| **CSS3 (BEM methodology)** | Ensures modular and maintainable styles. |
+| **JavaScript (ES6)** | Adds interactivity and follows OOP principles. |
+| **UUID** | Generates unique task IDs. |
+| **GitHub Pages** | Hosts the live version of the project. |
+| **Prettier** | Maintains clean and consistent code formatting. |
+
+---
+
+## 🛠 **Object-Oriented Programming (OOP) Implementation**  
+
+### **📌 Modular Components**  
+- **`Todo` Class:** Manages individual task creation, rendering, and event handling.  
+- **`FormValidator` Class:** Dynamically validates user input and resets the form upon submission.  
+- **`Section` Class:** Handles rendering and displaying task elements dynamically.  
+- **`Popup` & `PopupWithForm` Classes:** Manage modal functionality with smooth open/close interactions.  
+- **`TodoCounter` Class:** Tracks the total and completed tasks dynamically.  
+
+This modular structure ensures **maintainability, scalability, and clean code**.  
+
+---
 
 ## 🚀 **Deployment**
 The project is live and hosted on GitHub Pages:
 🔗 **[Simple Todo App](https://github.com/KevinJonesM/se_project_todo-app.git)**
+
+---
+
+## **🔥 Final Thoughts**  
+The **Simple Todo App** is designed for efficiency, ease of use, and scalability. Whether you're keeping track of daily chores or planning your next project
