@@ -17,41 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const todoCounter = new TodoCounter(initialTodos, counterSelector);
 
-    const generateTodo = (data) => {
-        if (!data || !data.name) return null;
-
-        try {
-            const todo = new Todo(data, "#todo-template");
-            const todoElement = todo.getView();
-
-            const checkbox = todoElement.querySelector(".todo__completed");
-            const deleteButton = todoElement.querySelector(".todo__delete-btn");
-
-            checkbox.addEventListener("change", () => {
-                todoCounter.updateCompleted(checkbox.checked);
-            });
-
-            deleteButton.addEventListener("click", () => {
-                todoCounter.updateTotal(false);
-                if (checkbox.checked) {
-                    todoCounter.updateCompleted(false);
-                }
-            });
-
-            return todoElement;
-        } catch (error) {
-            return null;
-        }
+    const renderTodo = (data) => {
+        const todo = new Todo(data, "#todo-template", 
+            () => todoCounter.updateCompleted(data.completed),
+            () => todoCounter.updateTotal(false)
+        );
+        const todoElement = todo.getView();
+        todoSection.addItem(todoElement);
     };
 
     const todoSection = new Section({
         items: initialTodos,
-        renderer: (item) => {
-            const todoElement = generateTodo(item);
-            if (todoElement) {
-                todoSection.addItem(todoElement);
-            }
-        },
+        renderer: renderTodo,
         containerSelector: todosListSelector
     });
 
@@ -64,11 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (date) date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
 
         const newTodo = { id: uuidv4(), name: formData.name, date, completed: false };
-        const todoElement = generateTodo(newTodo);
-        if (todoElement) {
-            todoSection.addItem(todoElement);
-            todoCounter.updateTotal(true);
-        }
+        renderTodo(newTodo);
+        todoCounter.updateTotal(true);
 
         formValidator.resetValidation();
     });
