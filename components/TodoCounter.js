@@ -7,12 +7,13 @@ export class TodoCounter {
     }
 
     updateCompleted(increment) {
-        this._completed += increment ? 1 : -1;
+        this._completed = Math.max(0, this._completed + (increment ? 1 : -1)); 
         this._updateText();
     }
 
     updateTotal(increment) {
-        this._total += increment ? 1 : -1;
+        this._total = Math.max(0, this._total + (increment ? 1 : -1)); 
+        if (this._total === 0) this._completed = 0; 
         this._updateText();
     }
 
