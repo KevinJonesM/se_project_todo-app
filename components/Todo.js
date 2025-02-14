@@ -11,13 +11,16 @@ export class Todo {
         const checkbox = todoElement.querySelector(".todo__completed");
 
         deleteButton.addEventListener("click", () => {
-            this._onDelete(); // Update the counter before removing
+            if (this._data.completed) {
+                this._onComplete(false);
+            }
+            this._onDelete();
             todoElement.remove();
         });
 
         checkbox.addEventListener("change", () => {
             this._data.completed = checkbox.checked;
-            this._onComplete(this._data.completed); // Update counter on check/uncheck
+            this._onComplete(this._data.completed);
         });
     }
 
@@ -48,3 +51,4 @@ export class Todo {
         return todoElement;
     }
 }
+
